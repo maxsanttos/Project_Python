@@ -1,2 +1,4 @@
 # Project_Python
- Segundo repositorio
+
+Segundo repositorio
+Projeto para calculo da fatura eletrica,com os valores de cada bandeira
