@@ -14,43 +14,42 @@ quilowatts-hora consumidos.
 Esse valor sobe para 6,24 em cada 100 quilowatts-hora
 
 """ 
-
-
-
-
 def consumo(leitura):
     anterior = int(input("Porfavor Informe a leitua anterio: "))
     atual = leitura - anterior
     return atual
 
-def calc(atual):
-    anterior = int(input("Porfavor Informe a leitua anterio: "))
-    atual = leitura - anterior
-    print(f"Sua Fatura tera o valor de R${atual}reais")
-    
+def calc():
+    latual= int(input("Informa a leitura atual: "))
+    lanterior = int(input("Informe a leitura anteiror: "))
+    c = latual - lanterior
+    print(f"Seu comsumo é de {c} quilowatss")
+
 def gree(atual):
     p = atual * 0.51
-    print(f"Parabéns não haverá nenhum acrescimo no valor da sua fatura, Você irá apenas pagar R${p:.2f} reias!")
+    print(f"Parabéns não haverá nenhum acrescimo no valor da sua fatura, Você irá apenas pagar R$ {p:.2f} reias!")
 
 
 def yellow(atual):
     x = atual / 100
     x *= 1.35
-    print(f"Seu Consumo é {atual} Quilowatss, Sua fatura terá um acrescimo de {x:.2f} reias")
+    fatura = (atual * 0.51) + x
+    print(f"Seu Consumo é {atual} Quilowatss, Sua fatura terá um acrescimo de {x:.2f} reais")
+    print(f"Sua fatura virá com o valor de R$ {fatura:.2f} reias")
  
 
 def red1(atual):
         d = atual /100
         d *= 4.17
-        print(f"Seu Consumo é {atual} Quilowatss,Sua fatura terá um acrescimo de R${d:.2f} reias")
-        
-    
-
+        fatura = (atual * 0.51) + d
+        print(f"Seu Consumo é {atual} Quilowatss,Sua fatura terá um acrescimo de R$ {d:.2f} reias")
+        print(f"Sua fatura virá com o valor de R$ {fatura:.2f} reias")
 def red2(atual):
     t = atual /100
     t *= 6.24
-    print(f"Seu Consumo é {atual} Quilowatss,Sua fatura terá um acrescimo de R${t:.2f} reias")
-    
+    fatura = (atual * 0.51) + t
+    print(f"Seu Consumo é {atual} Quilowatss,Sua fatura terá um acrescimo de R$ {t:.2f} reias")
+    print(f"Sua fatura virá com o valor de R$ {fatura:.2f} reias")
     
 
        
@@ -62,7 +61,8 @@ print("[1] Bandeiras")
 print("[2] Calculo do consumo")
 print("[0] Sair")
 print("-"*10)
-opcao = int(input("Escolhar: "))
+opcao = int(input("\nEscolhar: "))
+
 while opcao != 0:
     if opcao == 1:
         bandeira = int(input("[1]Verde \n[2]Amarelo  \n[3]Vermelho1 \n[4]Vermelho2  \n[0] Sair \n:"))
@@ -84,8 +84,16 @@ while opcao != 0:
         else:
             print("Opção inválida!!")
     elif opcao == 2:
-        calc(consumo(leitura))
-    
-    else:
-        print("Opção invalida!")
+        calc()
         break
+    else:
+        print("Opção inválida!")
+        break
+
+
+
+
+
+
+
+
